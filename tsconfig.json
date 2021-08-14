@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "jsx": "react", // "React"或"Preserve" 在.tsx文件中支持JSX
+    "baseUrl": ".",
+    "target": "es6", // 指定ECMAScript的目标版本
+    "noImplicitAny": false,
+    "pretty": true, // 使用颜色和上下文来设置错误和消息的样式。
+    "module": "esnext", // 指定模块代码生成 规范 可以是 UMD ...
+    "moduleResolution": "node", // 确定如何解析模块  module === "AMD" or "System" or "ES6" ? "Classic" : "Node"
+    "typeRoots": [ // 指定包含 加载ts文件，会被默认加载，一版写一些 inteface, type, module之类的
+      "./node_modules/@types",
+      "./types"
+    ],
+    "sourceMap": true,
+  },
+  "include": [ // 当前目录下的src里面的所有文件
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

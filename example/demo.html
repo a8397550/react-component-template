@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/react.development.js"></script>
+    <script src="lib/react-dom.development.js"></script>
+    <script src="lib/vue.js"></script>
+    <script src="bundle.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="lib/require.js"></script>
+    <title>example</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="root"></div>
+    <script type="text/babel">
+      require(['./bundle.js'], function(Mod) {
+        ReactDOM.render(<Mod text="hello world" />, document.getElementById("app"))
+      })
+    </script>
+    <script type="text/babel">
+        new Vue({
+          el: '#root',
+          data() {
+            return {
+                text: 'vue demo111'
+            }
+          },
+          template: `<div>{{text}}</div>`,
+        //   render(h) {
+        //     // https://cn.vuejs.org/v2/guide/render-function.html
+        //     return h('div', "vue demo")
+        //   }
+        })
+    </script>
+</body>
+</html>
